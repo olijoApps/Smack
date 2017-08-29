@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 // This Auth service will handle our login, create user, register user functions etc:
 
@@ -51,22 +52,18 @@ class AuthService {
         }
     }
     
-    // Here we are crafting out our own web request from xCode:
+    // Here we are crafting out our own web request from xCode with a registerUser function:
     func registerUser(email: String, password: String, completion: @escaping CompletionHandler) {
         
         let lowerCaseEmail = email.lowercased()
-        
-        let header = [
-            "Content-Type" : "application/json; charset=utf-8"
-        ]
         
         let body: [String : Any] = [
             "email" : lowerCaseEmail,
             "password" : password
         ]
         
-        // Now to create the request: This req has a specific type of method (get, post, etc)
-        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseString { (response) in
+        // Now to create the request: This request has a specific type of method (get, post, etc)
+        Alamofire.request(URL_REGISTER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
             
             if response.result.error == nil {
                 completion(true)
@@ -78,7 +75,38 @@ class AuthService {
         
     }
     
-    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String : Any] = [
+            "email" : lowerCaseEmail,
+            "password" : password
+        ]
+        
+        // Now we are creating our web request, the response comes back as JSON:
+        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+            
+            
+            if response.result.error == nil {
+                // Here is where we add in the JSON Object from postMan:
+                // We need to know how to handle a response in JSON from an API:
+                // ----- JSON PARSING: Section 6, Lecture 74
+                // Using SwiftyJSON:
+                guard let data = response.data else {return}
+                let json = JSON(data: data)
+                self.userEmail = json["user"].stringValue
+                self.authToken = json["token"].stringValue
+                
+                self.isLoggedIn = true
+                completion(true)
+            } else {
+                completion(false)
+                debugPrint(response.result.error as Any)
+            }
+        }
+        
+    }
     
     
     
