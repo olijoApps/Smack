@@ -21,6 +21,9 @@
 		91B9A4821F50C586005CD8E9 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A4811F50C586005CD8E9 /* CreateAccountVC.swift */; };
 		91B9A4851F538548005CD8E9 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A4841F538548005CD8E9 /* AuthService.swift */; };
 		91B9A4871F54F348005CD8E9 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A4861F54F348005CD8E9 /* RoundedButton.swift */; };
+		91B9A4891F59086A005CD8E9 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A4881F59086A005CD8E9 /* UserDataService.swift */; };
+		91B9A48B1F5A6B52005CD8E9 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A48A1F5A6B52005CD8E9 /* AvatarPickerVC.swift */; };
+		91B9A48D1F5B3494005CD8E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A48C1F5B3494005CD8E9 /* AvatarCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +46,9 @@
 		91B9A4811F50C586005CD8E9 /* CreateAccountVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		91B9A4841F538548005CD8E9 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		91B9A4861F54F348005CD8E9 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		91B9A4881F59086A005CD8E9 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		91B9A48A1F5A6B52005CD8E9 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		91B9A48C1F5B3494005CD8E9 /* AvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		DA72BD7A05D073390E048B92 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +118,7 @@
 				91B9A4781F4CF193005CD8E9 /* ChannelVC.swift */,
 				91B9A47F1F50BBC9005CD8E9 /* LoginVC.swift */,
 				91B9A4811F50C586005CD8E9 /* CreateAccountVC.swift */,
+				91B9A48A1F5A6B52005CD8E9 /* AvatarPickerVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -121,6 +128,7 @@
 			children = (
 				91B9A47A1F4F9FEB005CD8E9 /* GradientView.swift */,
 				91B9A4861F54F348005CD8E9 /* RoundedButton.swift */,
+				91B9A48C1F5B3494005CD8E9 /* AvatarCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 		91B9A4831F53852F005CD8E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				91B9A4881F59086A005CD8E9 /* UserDataService.swift */,
 				91B9A4841F538548005CD8E9 /* AuthService.swift */,
 			);
 			name = Services;
@@ -291,12 +300,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				91B9A4791F4CF193005CD8E9 /* ChannelVC.swift in Sources */,
+				91B9A48B1F5A6B52005CD8E9 /* AvatarPickerVC.swift in Sources */,
 				91B9A4871F54F348005CD8E9 /* RoundedButton.swift in Sources */,
 				91B9A4771F4CF16F005CD8E9 /* ChatVC.swift in Sources */,
+				91B9A4891F59086A005CD8E9 /* UserDataService.swift in Sources */,
 				91B9A4821F50C586005CD8E9 /* CreateAccountVC.swift in Sources */,
 				91B9A4851F538548005CD8E9 /* AuthService.swift in Sources */,
 				91B9A4801F50BBC9005CD8E9 /* LoginVC.swift in Sources */,
 				91B9A47B1F4F9FEB005CD8E9 /* GradientView.swift in Sources */,
+				91B9A48D1F5B3494005CD8E9 /* AvatarCell.swift in Sources */,
 				91B9A45D1F4BB94E005CD8E9 /* AppDelegate.swift in Sources */,
 				91B9A4721F4BC826005CD8E9 /* SWRevealViewController.m in Sources */,
 				91B9A47E1F500204005CD8E9 /* Constants.swift in Sources */,

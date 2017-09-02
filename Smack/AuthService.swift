@@ -88,6 +88,27 @@ class AuthService {
         Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             
             
+//            if response.result.error == nil {
+//                if let json = response.result.value as? Dictionary <String,Any> {
+//                    if let email = json["user"] as? String {
+//                        self.userEmail = email
+//                    }
+//                    
+//                    if let token = json["token"] as? String {
+//                        self.authToken = token
+//                    }
+//                }
+//                self.isLoggedIn = true
+//                completion(true)
+//            } else {
+//                completion(false)
+//                debugPrint(response.result.error as Any)
+//            }
+            
+            
+            
+            // The NEW way:
+            
             if response.result.error == nil {
                 // Here is where we add in the JSON Object from postMan:
                 // We need to know how to handle a response in JSON from an API:
@@ -97,7 +118,6 @@ class AuthService {
                 let json = JSON(data: data)
                 self.userEmail = json["user"].stringValue
                 self.authToken = json["token"].stringValue
-                
                 self.isLoggedIn = true
                 completion(true)
             } else {
@@ -108,8 +128,45 @@ class AuthService {
         
     }
     
-    
-    
+    // Here we code up the ..ADD/USER function. This will be called from the create account screen:
+    func createUser(avatarName: String, avatarColor: String, name: String, email: String, completion: @escaping CompletionHandler) {
+        
+        let lowerCaseEmail = email.lowercased()
+        
+        let body: [String : Any] = [
+            
+            "name" : name,
+            "email" : lowerCaseEmail,
+            "avatarName" : avatarName,
+            "avatarColor" : avatarColor
+        ]
+        
+
+        let header = [
+            "Authorization" : "Bearer \(AuthService.instance.authToken)",
+            "Content-Type" : "application/json; charset=utf-8"
+        ]
+        
+        Alamofire.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                let json = JSON(data: data)
+                let id = json["_id"].stringValue
+                let color = json["avatarColor"].stringValue
+                let avatarName = json["avatarName"].stringValue
+                let email = json["email"].stringValue
+                let name = json["name"].stringValue
+                
+                UserDataService.instance.setUserData(id: id, color: color, avatarName: avatarName, email: email, name: name)
+                completion(true)
+                
+            } else {
+                completion(true)
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
 }
 
 
