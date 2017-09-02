@@ -22,8 +22,14 @@ class CreateAccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+    }
+    
+    //Now we are setting the users avatar image to the one they just selected:
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.avatarName != "" {
+            userImg.image = UIImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
     }
     
     
