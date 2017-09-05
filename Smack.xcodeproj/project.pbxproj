@@ -24,6 +24,7 @@
 		91B9A4891F59086A005CD8E9 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A4881F59086A005CD8E9 /* UserDataService.swift */; };
 		91B9A48B1F5A6B52005CD8E9 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A48A1F5A6B52005CD8E9 /* AvatarPickerVC.swift */; };
 		91B9A48D1F5B3494005CD8E9 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A48C1F5B3494005CD8E9 /* AvatarCell.swift */; };
+		91B9A48F1F5E2A2B005CD8E9 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A48E1F5E2A2B005CD8E9 /* CircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		91B9A4881F59086A005CD8E9 /* UserDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
 		91B9A48A1F5A6B52005CD8E9 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
 		91B9A48C1F5B3494005CD8E9 /* AvatarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		91B9A48E1F5E2A2B005CD8E9 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		DA72BD7A05D073390E048B92 /* Pods-Smack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 				91B9A47A1F4F9FEB005CD8E9 /* GradientView.swift */,
 				91B9A4861F54F348005CD8E9 /* RoundedButton.swift */,
 				91B9A48C1F5B3494005CD8E9 /* AvatarCell.swift */,
+				91B9A48E1F5E2A2B005CD8E9 /* CircleImage.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				91B9A4791F4CF193005CD8E9 /* ChannelVC.swift in Sources */,
 				91B9A48B1F5A6B52005CD8E9 /* AvatarPickerVC.swift in Sources */,
 				91B9A4871F54F348005CD8E9 /* RoundedButton.swift in Sources */,
+				91B9A48F1F5E2A2B005CD8E9 /* CircleImage.swift in Sources */,
 				91B9A4771F4CF16F005CD8E9 /* ChatVC.swift in Sources */,
 				91B9A4891F59086A005CD8E9 /* UserDataService.swift in Sources */,
 				91B9A4821F50C586005CD8E9 /* CreateAccountVC.swift in Sources */,
