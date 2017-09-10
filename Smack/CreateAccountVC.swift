@@ -72,6 +72,7 @@ class CreateAccountVC: UIViewController {
         performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
     
+    // Generate a random color:
     @IBAction func changeBGColorPressed(_ sender: Any) {
         // Now we can create a randomly generated color:
         let r = CGFloat(arc4random_uniform(255)) / 255
@@ -79,7 +80,8 @@ class CreateAccountVC: UIViewController {
         let b = CGFloat(arc4random_uniform(255)) / 255
         
         bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
-        UIView.animate(withDuration: 0.2) {
+        avatarColor = "[\(r), \(g), \(b), \(1)]"
+        UIView.animate(withDuration: 0.3) {
            self.userImg.backgroundColor = self.bgColor
         }
     }
