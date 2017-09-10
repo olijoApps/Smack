@@ -233,6 +233,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="sLZ-xH-cO6" eventType="touchUpInside" id="h6c-eq-qvh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ug-Qe-Xkz">
                                 <rect key="frame" x="62.5" y="359" width="250" height="26"/>
@@ -261,6 +264,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="bgl-1F-0Gu">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.2901960784" green="0.30196078430000001" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HVd-Yn-Ai0">
                                 <rect key="frame" x="62" y="160" width="250" height="94"/>
                                 <subviews>
@@ -307,6 +314,7 @@
                         <constraints>
                             <constraint firstItem="R2R-3p-obG" firstAttribute="top" secondItem="M8J-mj-Rbp" secondAttribute="bottom" constant="8" id="6KP-Kf-gQE"/>
                             <constraint firstItem="wSg-E9-LVB" firstAttribute="centerX" secondItem="Ml0-jl-77z" secondAttribute="centerX" id="DbM-um-DQO"/>
+                            <constraint firstItem="bgl-1F-0Gu" firstAttribute="centerX" secondItem="Ml0-jl-77z" secondAttribute="centerX" id="G24-zi-brT"/>
                             <constraint firstItem="R2R-3p-obG" firstAttribute="trailing" secondItem="Ml0-jl-77z" secondAttribute="trailingMargin" id="RjN-Wq-Ntk"/>
                             <constraint firstItem="nev-os-h5p" firstAttribute="centerX" secondItem="Ml0-jl-77z" secondAttribute="centerX" id="TQr-Bv-JJF"/>
                             <constraint firstItem="5Ug-Qe-Xkz" firstAttribute="top" secondItem="nev-os-h5p" secondAttribute="bottom" constant="5" id="UzW-Wj-ANm"/>
@@ -315,9 +323,13 @@
                             <constraint firstItem="HVd-Yn-Ai0" firstAttribute="top" secondItem="wSg-E9-LVB" secondAttribute="bottom" constant="40" id="ror-ZU-esy"/>
                             <constraint firstItem="HVd-Yn-Ai0" firstAttribute="centerX" secondItem="Ml0-jl-77z" secondAttribute="centerX" id="shU-9m-0cC"/>
                             <constraint firstItem="nev-os-h5p" firstAttribute="top" secondItem="HVd-Yn-Ai0" secondAttribute="bottom" constant="50" id="wVK-oH-w7J"/>
+                            <constraint firstItem="bgl-1F-0Gu" firstAttribute="centerY" secondItem="Ml0-jl-77z" secondAttribute="centerY" constant="-100" id="z9g-zs-lyu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="m6B-BV-BDO" id="zG2-1U-ZNt"/>
+                        <outlet property="spinner" destination="bgl-1F-0Gu" id="5tT-go-OHB"/>
+                        <outlet property="usernameTxt" destination="5Ez-9W-Yk0" id="hPw-t5-3XX"/>
                         <segue destination="8m8-2D-aPC" kind="show" identifier="toCreateAccount" id="H2n-F3-8MM"/>
                     </connections>
                 </viewController>

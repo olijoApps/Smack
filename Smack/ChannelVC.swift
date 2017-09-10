@@ -24,6 +24,10 @@ class ChannelVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setupUserInfo()
+    }
+    
     @IBAction func loginBtnPressed(_ sender: UIButton) {
         if AuthService.instance.isLoggedIn {
             // Show profile page - here we can work with our XIB file
@@ -37,6 +41,10 @@ class ChannelVC: UIViewController {
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
+        setupUserInfo()
+    }
+    
+    func setupUserInfo() {
         if AuthService.instance.isLoggedIn {
             loginBtn.setTitle(UserDataService.instance.name, for: .normal)
             userImage.image = UIImage(named: UserDataService.instance.avatarName)
@@ -49,3 +57,15 @@ class ChannelVC: UIViewController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
