@@ -8,15 +8,19 @@
 
 import UIKit
 
-class ChannelVC: UIViewController {
+class ChannelVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // Outlets
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var userImage: CircleImage!
+    @IBOutlet weak var tableView: UITableView!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){}
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
 
         self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
         
@@ -27,6 +31,14 @@ class ChannelVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         setupUserInfo()
     }
+    
+    @IBAction func addChannelPressed(_ sender: Any) {
+        // First we have to instantiate the view controller:
+        let addChannel = AddChannelVC()
+        addChannel.modalPresentationStyle = .custom
+        present(addChannel, animated: true, completion: nil)
+    }
+    
     
     @IBAction func loginBtnPressed(_ sender: UIButton) {
         if AuthService.instance.isLoggedIn {
@@ -54,6 +66,30 @@ class ChannelVC: UIViewController {
             userImage.image = UIImage(named: "menuProfileIcon")
             userImage.backgroundColor = UIColor.clear
         }
+    }
+    
+    // CellForRow
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "channelCell", for: indexPath) as? ChannelCell {
+            // Create a variable for a specific chanel we want to pass into it
+            let channel = MessageService.instance.channels[indexPath.row]
+            
+            // Now to configure the cell
+            cell.configureCell(channel: channel)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    // NumberOfSections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // NumberOfRowsInSection
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.channels.count
     }
 
 }
