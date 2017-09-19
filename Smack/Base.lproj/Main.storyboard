@@ -77,15 +77,38 @@
                                     <constraint firstItem="uUZ-3m-DA5" firstAttribute="centerY" secondItem="519-k0-rRW" secondAttribute="centerY" id="r3I-6a-rx1"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pVG-yE-r6s">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GWx-ya-geC"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bXz-63-nZ8">
+                                <rect key="frame" x="337" y="632" width="30" height="30"/>
+                                <state key="normal" image="send"/>
+                                <connections>
+                                    <action selector="sendMessagePressed:" destination="XB3-Fv-VnG" eventType="touchUpInside" id="Sj5-Cw-Qsg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ukk-57-dGl" firstAttribute="top" secondItem="pVG-yE-r6s" secondAttribute="bottom" id="Exp-Qp-zTD"/>
+                            <constraint firstItem="pVG-yE-r6s" firstAttribute="leading" secondItem="pmr-6w-hfa" secondAttribute="leading" id="Fw4-x0-bZj"/>
                             <constraint firstItem="ziz-CC-7sb" firstAttribute="top" secondItem="pmr-6w-hfa" secondAttribute="top" id="L9b-2E-PYM"/>
+                            <constraint firstAttribute="trailing" secondItem="bXz-63-nZ8" secondAttribute="trailing" constant="8" id="YQ0-ht-ANq"/>
+                            <constraint firstItem="bXz-63-nZ8" firstAttribute="centerY" secondItem="pVG-yE-r6s" secondAttribute="centerY" id="bSf-Ms-3YT"/>
                             <constraint firstAttribute="trailing" secondItem="ziz-CC-7sb" secondAttribute="trailing" id="dzp-g2-FVZ"/>
                             <constraint firstItem="ziz-CC-7sb" firstAttribute="leading" secondItem="pmr-6w-hfa" secondAttribute="leading" id="gI9-Zs-cvs"/>
+                            <constraint firstAttribute="trailing" secondItem="pVG-yE-r6s" secondAttribute="trailing" id="l5E-dg-24h"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="UITextBox" destination="pVG-yE-r6s" id="zdj-zb-ecw"/>
+                        <outlet property="channelNameLbl" destination="uUZ-3m-DA5" id="lzo-vG-tuj"/>
                         <outlet property="menuBtn" destination="519-k0-rRW" id="MVm-oh-yPk"/>
                     </connections>
                 </viewController>
@@ -278,8 +301,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HVd-Yn-Ai0">
                                 <rect key="frame" x="62" y="160" width="250" height="94"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ez-9W-Yk0">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="username" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="5Ez-9W-Yk0">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="5Pj-UT-Anz"/>
                                             <constraint firstAttribute="height" constant="30" id="Wpp-At-ydR"/>
@@ -296,8 +321,10 @@
                                             <constraint firstAttribute="width" constant="250" id="zdx-qh-Zx1"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m6B-BV-BDO">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m6B-BV-BDO">
                                         <rect key="frame" x="0.0" y="52" width="250" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="Fxl-hD-Qjr"/>
                                             <constraint firstAttribute="height" constant="30" id="WDP-hU-XD5"/>
@@ -376,7 +403,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k6X-aJ-548">
                                 <rect key="frame" x="62" y="141.5" width="250" height="146"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QY8-Cq-8HM">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="username" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="QY8-Cq-8HM">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -397,7 +424,7 @@
                                             <constraint firstAttribute="width" constant="250" id="d4T-Y8-FbD"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wLd-iw-p1p">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wLd-iw-p1p">
                                         <rect key="frame" x="0.0" y="52" width="250" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,7 +445,7 @@
                                             <constraint firstAttribute="width" constant="250" id="nsZ-aT-8Mc"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="192-ct-UhL">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="192-ct-UhL">
                                         <rect key="frame" x="0.0" y="104" width="250" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -634,6 +661,7 @@
         <image name="closeButton" width="28" height="28"/>
         <image name="menuProfileIcon" width="99" height="99"/>
         <image name="profileDefault" width="192" height="192"/>
+        <image name="send" width="30" height="30"/>
         <image name="smackBack" width="28" height="28"/>
         <image name="smackBurger" width="40" height="40"/>
         <image name="smackLogo" width="48" height="40"/>
