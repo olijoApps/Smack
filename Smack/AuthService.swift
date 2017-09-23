@@ -85,7 +85,7 @@ class AuthService {
         ]
         
         // Now we are creating our web request, the response comes back as JSON:
-        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseString { (response) in
             
             
 //            if response.result.error == nil {
@@ -142,7 +142,7 @@ class AuthService {
         ]
         
         
-        Alamofire.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        Alamofire.request(URL_ADD_USER, method: .post, parameters: body, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseString { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
@@ -158,7 +158,7 @@ class AuthService {
     
     func findUserByEmail(completion: @escaping CompletionHandler) {
         
-        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        Alamofire.request("\(URL_USER_BY_EMAIL)\(userEmail)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseString { (response) in
             
             if response.result.error == nil {
                 guard let data = response.data else { return }

@@ -24,7 +24,7 @@ class MessageService {
     
     // Now we need a function to actually retrieve them
     func findAllChannel(completion: @escaping CompletionHandler) {
-        Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        Alamofire.request(URL_GET_CHANNELS, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseString { (response) in
             
             if response.result.error == nil {
                 
@@ -57,7 +57,7 @@ class MessageService {
     // A function that is user to get all messages:
     func findAllMessagesForChannel(channelId: String, completion: @escaping CompletionHandler) {
         
-        Alamofire.request("\(URL_GET_MESSAGE)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseJSON { (response) in
+        Alamofire.request("\(URL_GET_MESSAGE)\(channelId)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: BEARER_HEADER).responseString { (response) in
             
             if response.result.error == nil {
                 self.clearMessages()
@@ -69,7 +69,7 @@ class MessageService {
                         // Now we will go through and extract the properties for each item:
                         let messageBody = item["messageBody"].stringValue
                         let id = item["_id"].stringValue
-                        let userId = item["userId"].stringValue
+                        //let userId = item["userId"].stringValue
                         let userName = item["usrerName"].stringValue
                         let userAvatar = item["userAvatar"].stringValue
                         let userAvatarColor = item["userAvatarColor"].stringValue
@@ -77,7 +77,7 @@ class MessageService {
                         let timeStamp = item["timeStamp"].stringValue
                         
                         // Now to create a new message object:
-                        let message = Message(message: messageBody, id: id, userId: userId, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, channelId: channelId, timeStamp: timeStamp)
+                        let message = Message(message: messageBody, id: id, userName: userName, userAvatar: userAvatar, userAvatarColor: userAvatarColor, channelId: channelId, timeStamp: timeStamp)
                         
                         // and then append it to our messages array:
                         self.messages.append(message)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05E71D3C28ECDFA244BE4D37 /* Pods_Smack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C1FD1AD92E91350000D23A /* Pods_Smack.framework */; };
+		919FE5DB1F73C78100A7C32C /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919FE5DA1F73C78100A7C32C /* MessageCell.swift */; };
 		91B9A45D1F4BB94E005CD8E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B9A45C1F4BB94E005CD8E9 /* AppDelegate.swift */; };
 		91B9A4621F4BB94E005CD8E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B9A4601F4BB94E005CD8E9 /* Main.storyboard */; };
 		91B9A4641F4BB94E005CD8E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B9A4631F4BB94E005CD8E9 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		11C1FD1AD92E91350000D23A /* Pods_Smack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16486651CC3FB01983799BEC /* Pods-Smack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smack/Pods-Smack.release.xcconfig"; sourceTree = "<group>"; };
+		919FE5DA1F73C78100A7C32C /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		91B9A4591F4BB94E005CD8E9 /* Smack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B9A45C1F4BB94E005CD8E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91B9A4611F4BB94E005CD8E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				91B9A48E1F5E2A2B005CD8E9 /* CircleImage.swift */,
 				91B9A4991F661A9C005CD8E9 /* ChannelCell.swift */,
 				91CF16A11F70A85C0042AE99 /* KeyboardBoundView.swift */,
+				919FE5DA1F73C78100A7C32C /* MessageCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				91B9A49A1F661A9C005CD8E9 /* ChannelCell.swift in Sources */,
 				91B9A4791F4CF193005CD8E9 /* ChannelVC.swift in Sources */,
 				91B9A48B1F5A6B52005CD8E9 /* AvatarPickerVC.swift in Sources */,
+				919FE5DB1F73C78100A7C32C /* MessageCell.swift in Sources */,
 				91B9A4871F54F348005CD8E9 /* RoundedButton.swift in Sources */,
 				91CF16A01F6B57CA0042AE99 /* Message.swift in Sources */,
 				91B9A4981F660939005CD8E9 /* Channel.swift in Sources */,
