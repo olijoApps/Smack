@@ -21,6 +21,7 @@ class MessageService {
     
     //We need to append our messages to an array:
     var messages = [Message]()
+    var unreadChannels = [String]()
     
     // Now we need a function to actually retrieve them
     func findAllChannel(completion: @escaping CompletionHandler) {
